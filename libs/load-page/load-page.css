@@ -1,0 +1,70 @@
+
+:root {
+    --loadPage-primary-color: #6088d3;
+    --loadPage-secundary-color: rgb(113, 114, 187);
+    --loadPage-background-color: '#ddd';
+}
+
+.sloading {
+    position: relative;
+    background: var(--loadPage-background-color) !important;
+    color: transparent !important;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 2px;
+    cursor: default;
+}
+
+.sloading.circle {
+    border-radius: 50%;
+}
+
+.sloading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .8), transparent);
+    transform: translateX(-100%);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+#load-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    pointer-events: all;
+    transition: opacity .5s;
+    z-index: 999;
+    cursor: default;
+}
+
+#load-container .load-page {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(34, 34, 34, 0.15);
+}
+
+#load-container .load-page-item {
+    flex: 1;
+    margin: 0;
+}
+
+#load-container .load-page-item.sloading::after {
+    background: linear-gradient(to right, var(--loadPage-primary-color), var(--loadPage-secundary-color));
+}

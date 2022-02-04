@@ -1,0 +1,26 @@
+:root {
+    --main-color: 255, 255, 255; /* Branco */
+    --secundary-color: 235, 238, 245; /* Branco Azulado */
+    --alert-color: 235, 215, 140; /* Amarelo */
+    --box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+
+    --primary-title-color: #333;
+    --secundary-title-color: #555;
+    --text-smooth: rgb(123, 124, 129);
+    --text-color: #666;
+    --icon-color: #64748b;
+    --border-color: 228, 230, 235;
+    --border: 1px solid rgba(var(--border-color));
+
+    --accent-color: 5, 100, 240; /* Cor primária (Azul) */
+    --light-blue-color: 50, 175, 240; /* Azul Claro */
+    --blue-color: 5, 100, 240; /* Azul */
+    --purple-color: 120, 120, 240; /* Roxo */
+    --light-purple-color: 113, 114, 187; /* Roxo Claro */
+    --red-color: 233, 64, 41; /* Vermelho */
+    --light-red-color: 255, 138, 122; /* Vermelho Claro*/
+    --yellow-color: 236, 184, 41; /* Amarelo */
+    --green-color: 0, 184, 30; /* Verde */
+    --pink-color: 255, 48, 135; /* Rosa */
+    --orange-color: 255, 95, 58; /* Laranja */
+}

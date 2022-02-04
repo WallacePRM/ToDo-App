@@ -1,0 +1,9 @@
+html[theme="dark"] {
+    --main-color: 24, 24, 24; /* 23, 23, 33; */
+    --secundary-color: 44, 44, 44; /* Branco Azulado */
+
+    --primary-title-color: #fff;
+    --secundary-title-color: #ddd;
+    --text-color: #bbb;
+    --border-color: 64, 64, 64;
+}

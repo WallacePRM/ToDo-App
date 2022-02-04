@@ -1,0 +1,55 @@
+
+#alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+}
+#alert.active {
+    display: flex;
+}
+
+.task-alert {
+    width: max-content;
+    color: var(--primary-title-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: .4s;
+}
+.task-alert.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1.1);
+}
+
+.task-alert h1 {
+    font-size: 1.4rem;
+}
+
+.alert-content {
+    color: var(--secondary-title-color);
+}
+
+.task-alert footer {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.task-alert footer button {
+    flex: 1;
+}
+
+.task-alert footer button:first-child {
+    margin-right: 10px;
+}
+
+.task-alert .btn-primary {
+    background: rgba(var(--red-color), 1);
+}

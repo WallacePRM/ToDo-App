@@ -1,0 +1,35 @@
+
+/* POPUP */
+#popup {
+    position: absolute;
+    height: 0;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    transition: .45s;
+    transition-timing-function: cubic-bezier(.25,.8,.25,1);
+    padding: 0;
+    overflow: hidden;
+    z-index: 50;
+}
+#popup.active {
+    height: 82px;
+}
+.popup-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: .9rem;
+    color: var(--text-color);
+    cursor: pointer;
+    white-space: nowrap;
+}
+.popup-item:hover {
+    background: rgba(var(--secundary-color), .5);
+}
+.popup-item i {
+    margin-right: 15px;
+    padding-bottom: 2px;
+    color: var(--icon-color);
+    font-size: 1rem;
+}

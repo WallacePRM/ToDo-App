@@ -1,0 +1,109 @@
+/* ========== MODAL TASK ========== */
+.main-frame[show-modal-task="true"] .modal-task-background {
+    transform: translateX(0);
+}
+
+.modal-task-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    height: 100%;
+    width: 100vw;
+    max-width: 400px;
+    background-image: url(../../../img/background-1.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: .4s;
+    transition-timing-function: cubic-bezier(.25,.8,.25,1);
+    z-index: 50;
+}
+.modal-task {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-left: 1px solid rgba(var(--border-color), .5);
+    backdrop-filter: blur(2rem);
+    color: var(--text-color);
+}
+.modal-task .btn-icon:hover {
+    background: rgba(0, 0, 0, .05);
+}
+
+.modal-task .view-template {
+    margin-bottom: 10px;
+}
+
+.modal-task header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+
+.modal-task-content {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.modal-task-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+.modal-task-title > div {
+    display: flex;
+    align-items: center;
+}
+
+.modal-task-title input {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secundary-title-color);
+}
+.modal-task-title i {
+    cursor: pointer;
+}
+.modal-task-title i:hover {
+    color: rgba(var(--accent-color));
+}
+
+.modal-task-note textarea {
+    resize: none;
+    scrollbar-width: none;
+    width: 100%;
+    font-size: .9rem;
+    color: var(--text-smooth);
+}
+
+.modal-task footer {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: var(--border);
+    color: var(--primary-title-color);
+    font-weight: 500;
+    font-size: .875rem;
+}
+.modal-task footer span {
+    flex: 1;
+    text-align: center;
+}
+.modal-task footer i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.modal-task footer i:hover {
+    color: rgba(var(--red-color));
+}
+
+@media (max-width: 900px) {
+
+    .modal-task-background {
+        max-width: 100%;
+    }
+}

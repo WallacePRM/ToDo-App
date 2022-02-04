@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+input, select, textarea, pre, button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Heebo', sans-serif;
+    outline: none;
+    background-color: transparent;
+}
+textarea:focus {
+    outline: none;
+}
+
+.mr-0 {
+    margin-right: 0 !important;
+}
+.ml-0 {
+    margin-left: 0 !important;
+}
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+.mt-0 {
+    margin-top: 0 !important;
+}
