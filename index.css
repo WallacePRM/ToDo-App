@@ -98,6 +98,7 @@
     font-weight: 500;
     color: var(--secundary-title-color);
     background: rgba(var(--main-color), 1);
+    --webkit-app-region: drag;
     z-index: 1;
 }
 .task-view header:hover {
