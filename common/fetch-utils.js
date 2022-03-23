@@ -1,5 +1,3 @@
-const url = 'http://localhost:5001';
-
 const fetchJson = async (url, config) => {
 
 	config = config || {};

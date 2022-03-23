@@ -91,7 +91,7 @@ const createModalApp = () => {
                     <span><i class="far fa-copyright" style="margin-right: 5px;"></i>2022 Wprmdev-team. Todos os direitos reservados</span>
                     <div class="app-group-item" style="margin: 0">
                         <div class="group-item-action">
-                            <div class="app-version">2022.1.24<div>
+                            <div class="app-version">2022.3.23<div>
                         </div>
                     </div>
                 </div>

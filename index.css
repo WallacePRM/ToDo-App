@@ -15,6 +15,7 @@
     height: 100%;
     margin: 0 auto;
     padding: 20px;
+    padding-bottom: 0;
     overflow: hidden;
 }
 
@@ -73,8 +74,6 @@
     box-shadow: 0 0 1px rgba(0, 0, 0, .4);
 }
 
-
-/* ========== TASK VIEW ========== */
 .task-view {
     position: relative;
     flex: 1;
@@ -85,7 +84,8 @@
 }
 .task-view[header-top="false"] header {
     position: absolute;
-    background: rgba(var(--main-color), .9);
+    background: rgba(var(--main-color), .8);
+    backdrop-filter: blur(.5rem);
 }
 
 .task-view header {
@@ -109,132 +109,21 @@
     color: var(--text-color);
 }
 
-.toDo-list,
-.toDo-done-list {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 20px;
-}
-
-.toDo-list {
-    position: relative;
-}
-
-.toDo-done-list {
-    margin-top: 10px;
-    padding: 0;
-}
-
-.toDo-done-list.hidden .tasks-list {
-    display: none;
-}
-.toDo-done-list.hidden .btn-ripple i {
-    transform: rotate(-90deg);
-}
-
-.toDo-list-title {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.toDo-list-title i {
-    margin-right: 5px;
-    padding-bottom: 2px;
-}
-.toDo-list-title h3 {
-    font-size: 1.3rem;
-    color: var(--secundary-title-color);
-    font-weight: 500;
-}
-
-.toDo-list-title .done-count {
-    font-size: .9rem;
-    color: rgba(var(--accent-color));
-    font-weight: 500;
-    margin-left: 5px;
-}
-
-.toDo-done-list .toDo-list-title > div {
-    display: flex;
-    align-items: center;
-    background: rgba(var(--secundary-color));
-    padding: 5px;
-    border-radius: 0.3rem;
-}
-.toDo-done-list .toDo-list-title > div i {
-    transition: transform .1s;
-    padding: 0;
-    font-size: .7rem;
-}
-
-.toDo-done-list .toDo-list-title h3 {
-    font-size: .875rem;
-    color: var(--text-color);
-    font-weight: normal;
-}
-
-.task-item {
-    position: relative;
-    padding: 10px;
-    border-radius: .3rem;
-    display: flex;
-    align-items: center;
-    background: rgba(var(--secundary-color), .5);
-    color: var(--text-color);
-    margin-bottom: 3px;
-}
-.task-item.active {
-    background: rgba(var(--secundary-color), 1);
-}
-
-.task-item[data-important="true"] [name="btn_important"] {
-    color: rgba(var(--accent-color));
-}
-
-.task-item .task-description {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.task-item .task-name {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: .9rem;
-}
-
-.task-item .task-note {
-    font-size: .85rem;
-    color: var(--text-smooth);
-    opacity: .65;
-}
-
-[name="btn_important"] {
-    cursor: pointer;
-}
-[name="btn_important"]:hover {
-    color: rgba(var(--accent-color));
-}
-/* ========== TASK OPTIONS ========== */
-[name="btn_delete"],
-[name="btn_delete"] i {
-    color: rgba(var(--red-color));
-}
 
 /* ========== TO DO ACTIONS ========== */
-.task-view[header-top="true"] .toDo-actions {
+/* .task-view[header-top="true"] .toDo-actions {
+    position: absolute;
+    bottom: 0;
+    background: rgb(var(--main-color), .1);
+} */
+
+.toDo-actions {
     position: absolute;
     bottom: 0;
     background: rgb(var(--main-color), .8);
-}
-
-.toDo-actions {
-    background: rgb(var(--main-color), 1);
+    backdrop-filter: blur(.5rem);
     padding: 10px 20px;
+    padding-bottom: 40px;
     width: 100%;
 }
 

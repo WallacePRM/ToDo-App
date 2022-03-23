@@ -78,7 +78,7 @@ const checkLeftOvertaking = (el, screen) => {
 };
 
 const playNotify = () => {
-    const audio = new Audio('./sounds/notify-1.mp3');
+    const audio = new Audio('assets/sounds/notify.mp3');
     audio.play();
 };
 

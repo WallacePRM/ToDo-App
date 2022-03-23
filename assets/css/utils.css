@@ -237,3 +237,22 @@ html, body {
     text-decoration: none;
     color: rgba(var(--accent-color), .8);
 }
+
+
+/* --------- SCROLLBAR --------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(var(--border-color));
+    border-radius: 3rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: opacity(0.8);
+}

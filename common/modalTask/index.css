@@ -11,7 +11,7 @@
     height: 100%;
     width: 100vw;
     max-width: 400px;
-    background-image: url(../../../img/background-1.jpg);
+    background-image: url(../../assets/img/background.jpg);
     background-size: cover;
     background-position: center;
     transition: .4s;
@@ -24,7 +24,6 @@
     height: 100%;
     width: 100%;
     border-left: 1px solid rgba(var(--border-color), .5);
-    backdrop-filter: blur(2rem);
     color: var(--text-color);
 }
 .modal-task .btn-icon:hover {
