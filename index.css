@@ -10,6 +10,7 @@
 .main-frame {
     position: relative;
     display: flex;
+    background: rgba(var(--main-color), 1);
     color: var(--text-color);
     cursor: default;
     width: 100%;

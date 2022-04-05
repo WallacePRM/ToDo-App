@@ -186,7 +186,8 @@ html, body {
     border-radius: 3rem;
     margin-bottom: 10px;
 }
-.empty-message img {
+.empty-message img,
+.empty-message svg {
     padding: 10px;
     border-radius: 3rem;
     margin-bottom: 10px;

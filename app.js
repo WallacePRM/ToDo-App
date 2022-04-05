@@ -2,7 +2,7 @@ const render = () => {
 
     const app = document.querySelector('.app');
     app.innerHTML = `
-        <main class="main-frame view-template noselect" show-modal-task="false">
+        <main class="main-frame noselect" show-modal-task="false">
             <div class="task-view" header-top="true">
                 <header>
                     <div>
