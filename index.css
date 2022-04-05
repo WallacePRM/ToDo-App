@@ -4,6 +4,7 @@
     align-items: center;
     height: 100vh;
     width: 100%;
+    font-size: 1rem;
 }
 
 .main-frame {
@@ -20,7 +21,7 @@
 }
 
 .main-frame header h1 {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: bold;
     color: var(--primary-title-color);
     line-height: 25px;
@@ -43,7 +44,7 @@
 #popup footer {
     border-top: 1px solid rgba(var(--border-color), .5);
     color: var(--text-smooth);
-    font-size: .875rem;
+    font-size: 1em;
     font-weight: normal;
     cursor: default;
 }
@@ -84,8 +85,7 @@
 }
 .task-view[header-top="false"] header {
     position: absolute;
-    background: rgba(var(--main-color), .8);
-    backdrop-filter: blur(.5rem);
+    background: rgba(var(--main-color), .9);
 }
 
 .task-view header {
@@ -94,7 +94,7 @@
     justify-content: space-between;
     width: 100%;
     padding: 20px;
-    font-size: .9rem;
+    font-size: 1em;
     font-weight: 500;
     color: var(--secundary-title-color);
     background: rgba(var(--main-color), 1);
@@ -105,17 +105,11 @@
     background: rgba(var(--main-color), 1);
 }
 .task-view header > div i {
-    font-size: 1rem;
+    font-size: 1.2em;
     color: var(--text-color);
 }
 
-
 /* ========== TO DO ACTIONS ========== */
-/* .task-view[header-top="true"] .toDo-actions {
-    position: absolute;
-    bottom: 0;
-    background: rgb(var(--main-color), .1);
-} */
 
 .toDo-actions {
     position: absolute;
@@ -134,7 +128,7 @@
     width: 100%;
     background: rgba(var(--secundary-color));
     border-radius: .3rem;
-    font-size: 1rem;
+    font-size: 1em;
 }
 .toDo-actions-item i {
     position: absolute;
@@ -145,7 +139,7 @@
 [name="btn_add_task"] {
     padding: 15px 20px;
     background: transparent;
-    font-size: .9rem;
+    font-size: .875em;
     padding-left: 40px;
     width: 100%;
     color: var(--text-color);
@@ -163,7 +157,7 @@
     padding: 20px;
     color: var(--text-smooth);
     font-weight: 500;
-    font-size: .875rem;
+    font-size: .875em;
     opacity: .55;
 }
 
@@ -208,6 +202,10 @@
 }
 
 @media (max-width: 900px) {
+
+    .app {
+        font-size: 1rem;
+    }
 
     .main-frame[show-modal-task="true"] .task-view {
         margin-right: 0;

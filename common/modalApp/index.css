@@ -7,7 +7,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    font-size: .9rem;
+    font-size: .9em;
     background: rgba(var(--main-color), 1);
     color: var(--text-color);
     opacity: 0;
@@ -88,7 +88,7 @@
     width: 70px;
     border-radius: 3rem;
     color: #fff;
-    font-size: 1.7rem;
+    font-size: 1.7em;
     background: rgba(var(--border-color), 1);
     margin-right: 20px;
 }
@@ -108,7 +108,7 @@
 }
 
 .app-options .user-account-info .user-name {
-    font-size: 1.4rem;
+    font-size: 1.4em;
     color: var(--secundary-title-color);
 }
 .app-options .user-account-actions .btn-primary {

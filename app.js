@@ -23,10 +23,12 @@ const render = () => {
                     </div>
                 </div>
                 <div class="toDo-actions">
-                    <div class="toDo-actions-item">
-                        <i class="ti-plus"></i>
-                        <input name="btn_add_task" type="text" placeholder="Adicionar uma tarefa">
-                    </div>
+                    <form>
+                        <div class="toDo-actions-item">
+                            <i class="ti-plus"></i>
+                            <input name="btn_add_task" type="text" placeholder="Adicionar uma tarefa">
+                        </div>
+                    </form>
                 </div>
             </div>
         </main>

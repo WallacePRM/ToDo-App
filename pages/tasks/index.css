@@ -34,13 +34,13 @@
     padding-bottom: 2px;
 }
 .toDo-list-title h3 {
-    font-size: 1.3rem;
+    font-size: 1.2em;
     color: var(--secundary-title-color);
     font-weight: 500;
 }
 
 .toDo-list-title .done-count {
-    font-size: .9rem;
+    font-size: .9em;
     color: rgba(var(--accent-color));
     font-weight: 500;
     margin-left: 5px;
@@ -56,11 +56,11 @@
 .toDo-done-list .toDo-list-title > div i {
     transition: transform .1s;
     padding: 0;
-    font-size: .7rem;
+    font-size: .7em;
 }
 
 .toDo-done-list .toDo-list-title h3 {
-    font-size: .875rem;
+    font-size: .875em;
     color: var(--text-color);
     font-weight: normal;
 }
@@ -94,11 +94,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: .9rem;
+    font-size: .9em;
 }
 
 .task-item .task-note {
-    font-size: .85rem;
+    font-size: .85em;
     color: var(--text-smooth);
     opacity: .65;
 }

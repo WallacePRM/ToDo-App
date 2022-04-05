@@ -1,6 +1,6 @@
 const initTask = async () => {
 
-    document.querySelector('[name="btn_add_task"]').addEventListener('keydown', handleCreateTask);
+    document.querySelector('.toDo-actions form').addEventListener('submit', handleCreateTask);
     tasksList = await getTasks();
 
     addButtonRipple(document.querySelector('.app'));
@@ -27,7 +27,8 @@ const loadTasks = () => {
         $message.classList.add('noselect');
         $message.innerHTML = `
             <div class="empty-message noselect">
-                <i class="fas fa-check" aria-hidden="true"></i>
+                <!-- <i class="fas fa-check" aria-hidden="true"></i> -->
+                <img src="../src/assets/img/platelet.svg">
                 <h3>Nenhuma tarefa cadastrada</h3>
                 <span>Suas tarefas irão aparecer aqui.</span>
             </div>`
@@ -48,16 +49,25 @@ const loadTasks = () => {
         orderedTasks = tasksList;
     }
 
+    let taskIsDone = false;
     orderedTasks.forEach(task => {
 
         const $task = createTask(task);
         if (task.isDone) {
             appendDoneTask($task);
+            taskIsDone = true;
         }
         else {
             appendTask($task);
         }
     });
+
+    if (!taskIsDone) {
+        document.querySelector('.task-view .content').style.paddingBottom = document.querySelector('.toDo-actions').offsetHeight + 'px';
+    }
+    else {
+        document.querySelector('.task-view .content').style.paddingBottom = '0px';
+    }
 
     syncUserConfig();
     loadPage.remove();
@@ -119,13 +129,14 @@ const deleteTask = (taskId) => {
 // HANDLES
 const handleCreateTask = (e) => {
 
-    if (e.code === "Enter") {
-
+    // if (e.code === "Enter") {
+        e.preventDefault();
         loadPage.show();
 
+        const input = document.querySelector('[name="btn_add_task"]');
         const task = {
             id: new Date().valueOf(),
-            name: e.target.value,
+            name: input.value,
             note: '',
             isDone: false,
             create_at: new Date(),
@@ -134,11 +145,11 @@ const handleCreateTask = (e) => {
         };
 
         postTask(task);
-        e.target.value = '';
+        input.value = '';
 
         loadTasks();
         loadPage.remove();
-    }
+    // }
 };
 
 const handleUpdateTask = (e) => {
