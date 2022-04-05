@@ -17,12 +17,14 @@ const loadTasks = () => {
     const emptyMessage = document.querySelector('.empty-message');
     if (emptyMessage) emptyMessage.remove();
 
+    const actionsHeight =  document.querySelector('.toDo-actions').offsetHeight;
     const $toDoListTitle = document.querySelector('.toDo-list-title');
     if (tasksList.length === 0) {
 
         setTimeout(() => loadPage.remove(), 1000);
 
         const $emptyMessage = appendEmptyTask();
+        $emptyMessage.style.paddingBottom = actionsHeight + 'px';
         $toDoListTitle.insertAdjacentElement('afterend' , $emptyMessage);
         return;
     }
@@ -52,7 +54,7 @@ const loadTasks = () => {
     });
 
     if (!taskIsDone) {
-        document.querySelector('.task-view .content').style.paddingBottom = document.querySelector('.toDo-actions').offsetHeight + 'px';
+        document.querySelector('.task-view .content').style.paddingBottom = actionsHeight + 'px';
     }
     else {
         document.querySelector('.task-view .content').style.paddingBottom = '0px';

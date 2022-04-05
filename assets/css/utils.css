@@ -188,9 +188,9 @@ html, body {
 }
 .empty-message img,
 .empty-message svg {
-    padding: 10px;
     border-radius: 3rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .noselect {
