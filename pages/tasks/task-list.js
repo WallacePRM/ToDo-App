@@ -9,8 +9,6 @@ const initTask = async () => {
 
 const loadTasks = () => {
 
-    loadPage.show();
-
     document.querySelector('.toDo-tasks-list').innerHTML = '';
     removePopup();
     if (document.querySelector('.toDo-done-list')) document.querySelector('.toDo-done-list .tasks-list').innerHTML = '';
@@ -20,8 +18,6 @@ const loadTasks = () => {
     const actionsHeight =  document.querySelector('.toDo-actions').offsetHeight;
     const $toDoListTitle = document.querySelector('.toDo-list-title');
     if (tasksList.length === 0) {
-
-        setTimeout(() => loadPage.remove(), 1000);
 
         const $emptyMessage = appendEmptyTask();
         $emptyMessage.style.paddingBottom = actionsHeight + 'px';
@@ -61,7 +57,6 @@ const loadTasks = () => {
     }
 
     syncUserConfig();
-    loadPage.remove();
 };
 
 const createTask = (task) => {

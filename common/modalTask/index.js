@@ -25,7 +25,9 @@ const createModalTask = (task) => {
                     <div>
                         <input ${task.isDone ? 'checked' : ''} class="checkbox-input" type="checkbox">
                         <div class="checkbox-box"></div>
-                        <input name="btn_change_name" value="${task.name}"/>
+                        <form name="btn_change_name">
+                            <input value="${task.name}"/>
+                        </form>
                     </div>
                     <i name="btn_modal_important" class="${task.important ? 'fas fa-star' : 'far fa-star'}" style="color: ${task.important ? 'rgba(var(--accent-color))' : ''}"></i>
                 </div>
@@ -44,10 +46,18 @@ const createModalTask = (task) => {
     `;
 
     modalBackground.querySelector('.checkbox-box').addEventListener('click', handleUpdateTaskStatusModal);
-    modalBackground.querySelector('[name="btn_change_name"]').addEventListener('keydown', handleChangeTaskName);
+    modalBackground.querySelector('[name="btn_change_name"]').addEventListener('submit', handleChangeTaskName);
     modalBackground.querySelector('[name="btn_modal_important"]').addEventListener('click', handleUpdateTaskImportanceModal);
-    modalBackground.querySelector('[name="btn_add_note"]').addEventListener('keydown', handleAddNote);
     modalBackground.querySelector('[name="btn_delete_task"]').addEventListener('click', handleRemoveTaskModal);
+
+    let typingTimer;
+    modalBackground.querySelector('[name="btn_add_note"]').addEventListener('keyup', (e) => {
+        clearTimeout(typingTimer);
+
+        const $el = e.currentTarget;
+        typingTimer = setTimeout(() => updateTaskNote($el), 2000);
+    });
+    modalBackground.querySelector('[name="btn_add_note"]').addEventListener('keydown', () => clearTimeout(typingTimer));
 
     const $mainFrame = document.querySelector('.main-frame');
     $mainFrame.insertAdjacentElement('beforeend', modalBackground);
@@ -73,6 +83,22 @@ const removeModalTask = () => {
     $taskItem.forEach(taskItem => taskItem.classList.remove('active'));
 };
 
+const updateTaskNote = ($el) => {
+
+    const $modal = findAncestor($el, '.modal-task');
+    const taskId = parseInt($modal.getAttribute('data-id'));
+    const $task = document.querySelector(`.toDo-list [data-id="${taskId}"]`);
+
+    const note = $el.value;
+    const task = getTaskData($task);
+    task.note = note;
+
+    putTask(task);
+    loadTasks();
+};
+
+/* HANDLES */
+
 const handleRemoveModalTask = () => {
 
     removeModalTask();
@@ -96,26 +122,6 @@ const handleUpdateTaskImportanceModal = (e) => {
     const $task = document.querySelector(`.toDo-list [data-id="${taskId}"]`);
 
     $task.querySelector('[name="btn_important"]').click();
-};
-
-const handleAddNote = (e) => {
-
-    if (e.keyCode == 13 && !e.shiftKey) {
-        e.preventDefault();
-
-        const $el = e.currentTarget;
-        const $modal = findAncestor($el, '.modal-task');
-        const taskId = parseInt($modal.getAttribute('data-id'));
-        const $task = document.querySelector(`.toDo-list [data-id="${taskId}"]`);
-
-        const note = $el.value;
-        const task = getTaskData($task);
-        task.note = note;
-
-        $el.blur();
-        putTask(task);
-        loadTasks();
-    }
 };
 
 const handleRemoveTaskModal = (e) => {
@@ -158,19 +164,18 @@ const handleRemoveTaskModal = (e) => {
 
 const handleChangeTaskName = (e) => {
 
-    if (e.code === "Enter") {
+    e.preventDefault();
 
-        const $el = e.currentTarget;
-        const $modal = findAncestor($el, '.modal-task');
-        const taskId = parseInt($modal.getAttribute('data-id'));
-        const $task = document.querySelector(`.toDo-list [data-id="${taskId}"]`);
+    const $el = e.currentTarget.querySelector('input');
+    const $modal = findAncestor($el, '.modal-task');
+    const taskId = parseInt($modal.getAttribute('data-id'));
+    const $task = document.querySelector(`.toDo-list [data-id="${taskId}"]`);
 
-        const name = e.currentTarget.value;
-        const task = getTaskData($task);
-        task.name = name;
+    const name = $el.value;
+    const task = getTaskData($task);
+    task.name = name;
 
-        $el.blur();
-        putTask(task);
-        loadTasks();
-    }
+    $el.blur();
+    putTask(task);
+    loadTasks();
 };
